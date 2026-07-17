@@ -1,16 +1,20 @@
+const input = document.getElementById("taskInput");
+const button = document.getElementById("addTask");
+const list = document.getElementById("taskList");
 
-function addTask() {
-    let task = document.getElementById("task").value;
+button.addEventListener("click", function() {
+  const taskText = input.value;
 
-    if (task === "") {
-        alert("Please enter a task");
-        return;
-    }
+  if (taskText !== "") {
+    const li = document.createElement("li");
+    li.textContent = taskText;
 
-    let li = document.createElement("li");
-    li.innerText = task;
+    // Check off task when clicked
+    li.addEventListener("click", function() {
+      li.classList.toggle("completed");
+    });
 
-    document.getElementById("list").appendChild(li);
-
-    document.getElementById("task").value = "";
-}
+    list.appendChild(li);
+    input.value = "";
+  }
+});
