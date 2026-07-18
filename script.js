@@ -1,3 +1,4 @@
+
 const input = document.getElementById("taskInput");
 const dateInput = document.getElementById("taskDate");
 const button = document.getElementById("addTask");
@@ -12,7 +13,12 @@ function displayTasks() {
     const li = document.createElement("li");
 
     const span = document.createElement("span");
-    span.textContent = task.text;
+
+    if (task.date) {
+      span.textContent = task.text + " 📅 " + task.date;
+    } else {
+      span.textContent = task.text;
+    }
 
     if (task.completed) {
       li.classList.add("completed");
