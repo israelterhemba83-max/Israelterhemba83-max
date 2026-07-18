@@ -26,6 +26,9 @@ function displayTasks() {
 
     li.appendChild(span);
     li.appendChild(deleteBtn);
+    li.addEventListener("click", function() {
+  li.classList.toggle("completed");
+});
     list.appendChild(li);
   });
 }
