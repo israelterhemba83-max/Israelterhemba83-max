@@ -14,7 +14,15 @@ function displayTasks(filteredTasks = tasks) {
   list.innerHTML = "";
 
   taskCount.textContent = "Total tasks: " + tasks.length;
+const completed = tasks.filter(function(task) {
+  return task.completed;w we
+}).length;
 
+const percent = tasks.length === 0
+  ? 0
+  : (completed / tasks.length) * 100;
+
+progressBar.style.width = percent + "%";
   filteredTasks.forEach(function(task, index) {
     const li = document.createElement("li");
 
