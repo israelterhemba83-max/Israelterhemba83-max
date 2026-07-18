@@ -1,5 +1,5 @@
-const progressBar = document.getElementById("progressBar");
 const clearCompleted = document.getElementById("clearCompleted");
+const progressBar = document.getElementById("progressBar");
 const input = document.getElementById("taskInput");
 const dateInput = document.getElementById("taskDate");
 const priorityInput = document.getElementById("taskPriority");
