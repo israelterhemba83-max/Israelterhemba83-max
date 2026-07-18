@@ -37,7 +37,7 @@ progressBar.style.width = percent + "%";
 
     if (task.completed) {
       li.classList.add("completed");
-    }
+  
 
     span.addEventListener("click", function() {
       task.completed = !task.completed;
@@ -100,7 +100,7 @@ searchInput.addEventListener("input", function() {
   const searchText = searchInput.value.toLowerCase();
 
   const filtered = tasks.filter(function(task) {
-    return task.text.toLowerCase().includes(searchText);
+    return task.text.toLowerCase()di .includes(searchText);
   });
 
   displayTasks(filtered);
