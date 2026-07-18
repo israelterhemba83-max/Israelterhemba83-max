@@ -6,8 +6,20 @@ button.addEventListener("click", function() {
   const taskText = input.value;
 
   if (taskText !== "") {
-    const li = document.createElement("li");
-    li.textContent = taskText;
+const li = document.createElement("li");
+
+const span = document.createElement("span");
+span.textContent = taskText;
+
+const deleteBtn = document.createElement("button");
+deleteBtn.textContent = "Delete";
+
+deleteBtn.addEventListener("click", function() {
+  li.remove();
+});
+
+li.appendChild(span);
+li.appendChild(deleteBtn);
 
     // Check off task when clicked
     li.addEventListener("click", function() {
