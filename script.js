@@ -3,7 +3,6 @@ const input = document.getElementById("taskInput");
 const button = document.getElementById("addTask");
 const list = document.getElementById("taskList");
 
-// Load saved tasks
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 function displayTasks() {
@@ -13,7 +12,17 @@ function displayTasks() {
     const li = document.createElement("li");
 
     const span = document.createElement("span");
-    span.textContent = task;
+    span.textContent = task.text;
+
+    if (task.completed) {
+      li.classList.add("completed");
+    }
+
+    span.addEventListener("click", function() {
+      task.completed = !task.completed;
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      displayTasks();
+    });
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
@@ -26,9 +35,6 @@ function displayTasks() {
 
     li.appendChild(span);
     li.appendChild(deleteBtn);
-    li.addEventListener("click", function() {
-  li.classList.toggle("completed");
-});
     list.appendChild(li);
   });
 }
@@ -37,7 +43,11 @@ button.addEventListener("click", function() {
   const taskText = input.value;
 
   if (taskText !== "") {
-    tasks.push(taskText);
+    tasks.push({
+      text: taskText,
+      completed: false
+    });
+
     localStorage.setItem("tasks", JSON.stringify(tasks));
     input.value = "";
     displayTasks();
