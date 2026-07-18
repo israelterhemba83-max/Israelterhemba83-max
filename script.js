@@ -46,6 +46,11 @@ const taskDate = dateInput.value;
   if (taskText !== "") {
     tasks.push({
       text: taskText,
+      tasks.push({
+  text: taskText,
+  date: taskDate,
+  completed: false
+});
       completed: false
     });
 
