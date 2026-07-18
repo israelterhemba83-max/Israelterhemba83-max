@@ -1,4 +1,3 @@
-const progressBar = document.getElementById("progressBar");
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f6ff;
