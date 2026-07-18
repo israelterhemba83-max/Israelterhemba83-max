@@ -26,4 +26,8 @@ li {
 .completed {
   text-decoration: line-through;
   opacity: 0.6;
+    .completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
 }
