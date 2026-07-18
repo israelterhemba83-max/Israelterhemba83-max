@@ -1,4 +1,3 @@
-
 const input = document.getElementById("taskInput");
 const dateInput = document.getElementById("taskDate");
 const button = document.getElementById("addTask");
@@ -42,16 +41,20 @@ function displayTasks() {
 
 button.addEventListener("click", function() {
   const taskText = input.value;
-const taskDate = dateInput.value;
-  if (taskText !== "") 
+  const taskDate = dateInput.value;
+
+  if (taskText !== "") {
     tasks.push({
-  text: taskText,
-  date: taskDate,
-  completed: false
-});
+      text: taskText,
+      date: taskDate,
+      completed: false
+    });
 
     localStorage.setItem("tasks", JSON.stringify(tasks));
+
     input.value = "";
+    dateInput.value = "";
+
     displayTasks();
   }
 });
