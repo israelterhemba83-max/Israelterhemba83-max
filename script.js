@@ -35,7 +35,18 @@ function displayTasks(filteredTasks = tasks) {
       saveTasks();
       displayTasks();
     });
+const editBtn = document.createElement("button");
+editBtn.textContent = "Edit";
 
+editBtn.addEventListener("click", function() {
+  const newText = prompt("Edit your task:", task.text);
+
+  if (newText !== null && newText !== "") {
+    task.text = newText;
+    saveTasks();
+    displayTasks();
+  }
+});
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
 
