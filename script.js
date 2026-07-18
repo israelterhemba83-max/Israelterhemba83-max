@@ -1,25 +1,30 @@
 
 const input = document.getElementById("taskInput");
-const searchInput = document.getElementById("searchInput");
 const dateInput = document.getElementById("taskDate");
+const priorityInput = document.getElementById("taskPriority");
 const button = document.getElementById("addTask");
 const list = document.getElementById("taskList");
+const searchInput = document.getElementById("searchInput");
+const taskCount = document.getElementById("taskCount");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-function displayTasks() {
+function displayTasks(filteredTasks = tasks) {
   list.innerHTML = "";
 
-  tasks.forEach(function(task, index) {
+  taskCount.textContent = "Total tasks: " + tasks.length;
+
+  filteredTasks.forEach(function(task, index) {
     const li = document.createElement("li");
 
     const span = document.createElement("span");
 
-    if (task.date) {
-      span.textContent = task.text + " 📅 " + task.date;
-    } else {
-      span.textContent = task.text;
-    }
+    span.textContent =
+      task.text +
+      " 📅 " +
+      (task.date || "No date") +
+      " ⭐ " +
+      task.priority;
 
     if (task.completed) {
       li.classList.add("completed");
@@ -27,7 +32,7 @@ function displayTasks() {
 
     span.addEventListener("click", function() {
       task.completed = !task.completed;
-      localStorage.setItem("tasks", JSON.stringify(tasks));
+      saveTasks();
       displayTasks();
     });
 
@@ -36,7 +41,7 @@ function displayTasks() {
 
     deleteBtn.addEventListener("click", function() {
       tasks.splice(index, 1);
-      localStorage.setItem("tasks", JSON.stringify(tasks));
+      saveTasks();
       displayTasks();
     });
 
@@ -46,24 +51,38 @@ function displayTasks() {
   });
 }
 
+function saveTasks() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
 button.addEventListener("click", function() {
   const taskText = input.value;
-  const taskDate = dateInput.value;
 
   if (taskText !== "") {
     tasks.push({
       text: taskText,
-      date: taskDate,
+      date: dateInput.value,
+      priority: priorityInput.value,
       completed: false
     });
 
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    saveTasks();
 
     input.value = "";
     dateInput.value = "";
 
     displayTasks();
   }
+});
+
+searchInput.addEventListener("input", function() {
+  const searchText = searchInput.value.toLowerCase();
+
+  const filtered = tasks.filter(function(task) {
+    return task.text.toLowerCase().includes(searchText);
+  });
+
+  displayTasks(filtered);
 });
 
 displayTasks();
