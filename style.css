@@ -1,15 +1,15 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f2f6ff;
+    background: #eef2ff;
     margin: 0;
     padding: 20px;
 }
 
 .container {
-    max-width: 400px;
+    max-width: 450px;
     margin: auto;
     background: white;
-    padding: 20px;
+    padding: 25px;
     border-radius: 15px;
     text-align: center;
 }
@@ -18,16 +18,16 @@ h1 {
     color: #2563eb;
 }
 
-input {
-    width: 70%;
-    padding: 10px;
-    border: 1px solid #ccc;
+input, select {
+    width: 90%;
+    padding: 12px;
+    margin: 8px;
     border-radius: 8px;
+    border: 1px solid #ccc;
 }
 
 button {
-    padding: 10px;
-    margin-left: 5px;
+    padding: 12px;
     background: #2563eb;
     color: white;
     border: none;
@@ -35,25 +35,25 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background: #1d4ed8;
-}
-
 ul {
-    list-style: none;
     padding: 0;
+    list-style: none;
 }
 
 li {
-    background: #e8f0ff;
+    background: #f1f5f9;
     margin-top: 10px;
     padding: 12px;
     border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
+    text-align: left;
 }
 
 .completed {
     text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.delete {
+    float: right;
+    background: #dc2626;
 }
