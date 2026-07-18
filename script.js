@@ -95,5 +95,12 @@ searchInput.addEventListener("input", function() {
 
   displayTasks(filtered);
 });
+clearCompleted.addEventListener("click", function() {
+  tasks = tasks.filter(function(task) {
+    return !task.completed;
+  });
 
+  saveTasks();
+  displayTasks();
+});
 displayTasks();
