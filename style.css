@@ -1,77 +1,38 @@
 body {
     font-family: Arial, sans-serif;
     background: #f2f6ff;
-    padding: 20px;
-    text-align: center;
     margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
 }
 
 h1 {
     color: #2563eb;
-    margin-bottom: 10px;
 }
 
-.header {
-    background: linear-gradient(135deg, #2563eb, #4f46e5);
-    color: white;
-    padding: 20px;
-    border-radius: 15px;
-    max-width: 450px;
-    margin: 15px auto;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.header h2 {
-    margin: 0;
-}
-
-.header p {
-    margin-top: 8px;
-}
-
-#taskCount {
-    font-weight: bold;
-    margin: 15px;
-    color: #444;
-}
-
-.progress-container {
-    width: 90%;
-    max-width: 450px;
-    height: 18px;
-    background: #ddd;
-    border-radius: 20px;
-    overflow: hidden;
-    margin: 15px auto;
-}
-
-#progressBar {
-    width: 0%;
-    height: 100%;
-    background: #22c55e;
-    transition: width 0.4s;
-}
-
-input,
-select,
-button {
-    width: 90%;
-    max-width: 450px;
-    padding: 12px;
-    margin: 8px auto;
-    border-radius: 10px;
+input {
+    width: 70%;
+    padding: 10px;
     border: 1px solid #ccc;
-    display: block;
-    box-sizing: border-box;
-    font-size: 16px;
+    border-radius: 8px;
 }
 
 button {
+    padding: 10px;
+    margin-left: 5px;
     background: #2563eb;
     color: white;
     border: none;
+    border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 button:hover {
@@ -79,44 +40,20 @@ button:hover {
 }
 
 ul {
+    list-style: none;
     padding: 0;
 }
 
 li {
-    list-style: none;
-    background: white;
-    margin: 12px auto;
-    padding: 15px;
-    border-radius: 12px;
-    max-width: 450px;
+    background: #e8f0ff;
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
 .completed {
     text-decoration: line-through;
-    opacity: 0.6;
-}
-
-.dark {
-    background: #121212;
-    color: white;
-}
-
-.dark .header {
-    background: linear-gradient(135deg, #1e293b, #334155);
-}
-
-.dark li {
-    background: #2d2d2d;
-    color: white;
-}
-
-.dark input,
-.dark select {
-    background: #333;
-    color: white;
-    border: 1px solid #555;
 }
