@@ -18,13 +18,3 @@ button {
     color: white;
     border: none;
 }
-
-li {
-    margin-top: 10px;
-    font-size: 18px;
-}
-.completed {
-  text-decoration: line-through;
-  opacity: 0.6;
-    .completed 
-}
