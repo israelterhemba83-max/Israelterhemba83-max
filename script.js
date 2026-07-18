@@ -43,16 +43,12 @@ function displayTasks() {
 button.addEventListener("click", function() {
   const taskText = input.value;
 const taskDate = dateInput.value;
-  if (taskText !== "") {
+  if (taskText !== "") 
     tasks.push({
-      text: taskText,
-      tasks.push({
   text: taskText,
   date: taskDate,
   completed: false
 });
-      completed: false
-    });
 
     localStorage.setItem("tasks", JSON.stringify(tasks));
     input.value = "";
