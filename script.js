@@ -42,7 +42,7 @@ function displayTasks() {
 
 button.addEventListener("click", function() {
   const taskText = input.value;
-
+const taskDate = dateInput.value;
   if (taskText !== "") {
     tasks.push({
       text: taskText,
