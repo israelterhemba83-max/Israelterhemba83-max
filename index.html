@@ -1,51 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskFlow</title>
-
+    <title>My Task App</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
 
-    <h1>TaskFlow</h1>
+    <div class="container">
+        <h1>My Tasks</h1>
 
-    <div class="header">
-        <h2>Stay Organized</h2>
-        <p>Plan your day. Complete your goals.</p>
+        <input id="task" type="text" placeholder="Enter a task">
+        <button onclick="addTask()">Add Task</button>
+
+        <h3 id="count">Tasks: 0</h3>
+
+        <ul id="list"></ul>
     </div>
 
-    <p id="taskCount"></p>
-<div class="progress-container">
-    <div id="progressBar"></div>
-</div>
-    <input type="text" id="taskInput" placeholder="Enter a task">
-
-    <select id="taskPriority">
-        <option value="Low">Low</option>
-        <option value="Medium">Medium</option>
-        <option value="High">High</option>
-    </select>
-
-    <input type="date" id="taskDate">
-
-    <button id="addTask">Add Task</button>
-    <button id="darkMode">Dark Mode</button>
-
-    <br><br>
-
-    <input type="text" id="searchInput" placeholder="Search tasks">
-
-    <br><br>
-
-    <button id="clearCompleted">Clear Completed</button>
-
-    <ul id="taskList"></ul>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
