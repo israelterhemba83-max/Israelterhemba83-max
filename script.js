@@ -15,7 +15,7 @@ function displayTasks(filteredTasks = tasks) {
 
   taskCount.textContent = "Total tasks: " + tasks.length;
 const completed = tasks.filter(function(task) {
-  return task.completed;w we
+  return task.completed;
 }).length;
 
 const percent = tasks.length === 0
