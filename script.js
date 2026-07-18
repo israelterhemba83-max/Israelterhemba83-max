@@ -1,5 +1,6 @@
 
 const input = document.getElementById("taskInput");
+const dateInput = document.getElementById("taskDate");
 const button = document.getElementById("addTask");
 const list = document.getElementById("taskList");
 
