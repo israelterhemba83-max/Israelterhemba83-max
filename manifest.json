@@ -1,0 +1,9 @@
+{
+  "name": "My To-Do App",
+  "short_name": "ToDo",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f2f6ff",
+  "theme_color": "#0000ff",
+  "icons": []
+}
