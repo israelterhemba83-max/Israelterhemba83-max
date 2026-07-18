@@ -1,64 +1,62 @@
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-function saveTasks() {
+function save() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-function showTasks() {
+function displayTasks() {
     let list = document.getElementById("list");
     list.innerHTML = "";
 
-    tasks.forEach(function(task, index) {
+    tasks.forEach((task, index) => {
         let li = document.createElement("li");
 
-        li.innerHTML = `
-            <span onclick="completeTask(${index})">
-                ${task.text}
-            </span>
-            <button onclick="deleteTask(${index})">Delete</button>
-        `;
+        li.innerHTML =
+        `${task.text} (${task.category})
+        <button class="delete" onclick="removeTask(${index})">X</button>`;
 
-        if (task.completed) {
+        li.onclick = function() {
+            task.completed = !task.completed;
+            save();
+            displayTasks();
+        };
+
+        if(task.completed){
             li.classList.add("completed");
         }
 
         list.appendChild(li);
     });
 
-    document.getElementById("count").innerText =
-        "Tasks: " + tasks.length;
+    document.getElementById("count").innerHTML =
+    "Tasks: " + tasks.length;
 }
 
 function addTask() {
-    let input = document.getElementById("task");
-    let text = input.value;
+    let text = document.getElementById("task").value;
+    let category = document.getElementById("category").value;
 
-    if (text === "") {
-        alert("Please enter a task");
+    if(text === ""){
+        alert("Enter a task");
         return;
     }
 
     tasks.push({
         text: text,
+        category: category,
         completed: false
     });
 
-    saveTasks();
-    showTasks();
+    save();
+    displayTasks();
 
-    input.value = "";
+    document.getElementById("task").value = "";
 }
 
-function completeTask(index) {
-    tasks[index].completed = !tasks[index].completed;
-    saveTasks();
-    showTasks();
+function removeTask(index){
+    tasks.splice(index,1);
+    save();
+    displayTasks();
 }
 
-function deleteTask(index) {
-    tasks.splice(index, 1);
-    saveTasks();
-    showTasks();
-}
-
-showTasks();
+displayTasks();
