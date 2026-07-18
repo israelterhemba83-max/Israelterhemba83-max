@@ -57,6 +57,7 @@ editBtn.addEventListener("click", function() {
     });
 
     li.appendChild(span);
+    li.appendChild(editBtn);
     li.appendChild(deleteBtn);
     list.appendChild(li);
   });
