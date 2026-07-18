@@ -62,3 +62,19 @@ li {
     background-color: #333;
     color: white;
 }
+.progress-container {
+    width: 90%;
+    max-width: 400px;
+    height: 20px;
+    background: #ddd;
+    border-radius: 20px;
+    margin: 15px auto;
+    overflow: hidden;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    background: #22c55e;
+    transition: width 0.5s;
+}
