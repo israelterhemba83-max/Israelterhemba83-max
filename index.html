@@ -1,49 +1,49 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My To-Do App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow</title>
+
     <link rel="stylesheet" href="style.css">
-    {
-  "name": "TaskFlow",
-  "short_name": "TaskFlow",
-  "start_url": "index.html",
-  "display": "standalone",
-  "background_color": "#f2f6ff",
-  "theme_color": "#0000ff",
-  "icons": [
-    {
-      "src": "48ee4a126077d53de39f2e45b562c118.jpg",
-      "sizes": "512x512",
-      "type": "image/jpeg"
-    }
-  ]
-}
+    <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
-    
-<h1>TaskFlow</h1>
-    <div class="header">
-    <h2>Stay Organized</h2>
-    <p>Plan your day. Complete your goals.</p>
-</div>
 
-<p id="taskCount"></p>
+    <h1>TaskFlow</h1>
+
+    <div class="header">
+        <h2>Stay Organized</h2>
+        <p>Plan your day. Complete your goals.</p>
+    </div>
+
+    <p id="taskCount"></p>
+
     <input type="text" id="taskInput" placeholder="Enter a task">
-   <select id="taskPriority">
-    <option value="Low">Low</option>
-    <option value="Medium">Medium</option>
-    <option value="High">High</option>
-</select>
+
+    <select id="taskPriority">
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+    </select>
+
     <input type="date" id="taskDate">
+
     <button id="addTask">Add Task</button>
-<button id="darkMode">Dark Mode</button>
+    <button id="darkMode">Dark Mode</button>
+
+    <br><br>
+
     <input type="text" id="searchInput" placeholder="Search tasks">
-   <p id="taskCount"></p>
+
+    <br><br>
+
     <button id="clearCompleted">Clear Completed</button>
+
     <ul id="taskList"></ul>
 
     <script src="script.js"></script>
+
 </body>
 </html>
