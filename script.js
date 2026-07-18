@@ -100,7 +100,7 @@ searchInput.addEventListener("input", function() {
   const searchText = searchInput.value.toLowerCase();
 
   const filtered = tasks.filter(function(task) {
-    return task.text.toLowerCase()di .includes(searchText);
+    return task.text.toLowerCase() .includes(searchText);
   });
 
   displayTasks(filtered);
